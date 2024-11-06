@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 
 # Parâmetros base
-start_range = int("48888888888888888", 16)
+start_range = int("48888888888888889", 16)
 end_range = int("4ffffffffffffffff", 16)
 
 initial_total_subranges = 100000

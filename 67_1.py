@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Parâmetros base
 start_range = int("40000000000000000", 16)
-end_range = int("7ffffffffffffffff", 16)
+end_range = int("48888888888888888", 16)
 
 initial_total_subranges = 100000
 address = "1BY8GQbnueYofwSuFAT3USAhGjPrkxDdW9"

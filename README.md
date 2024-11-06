@@ -28,11 +28,14 @@ apt install libgmp-dev -y
 ````
 Python 
 ````
-sudo apt-get install python3.9
+sudo apt update
+sudo apt install python3
+sudo apt install python3-pip
 ````
 Clonar o repositório
 ````
-https://github.com/B2FVision/K-Cuda.git
+git clone https://github.com/B2FVision/K-Cuda.git
+cd K-Cuda
 ````
 Instalação com placa de video
 ````

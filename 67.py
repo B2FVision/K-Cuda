@@ -10,8 +10,8 @@ end_range = int("7ffffffffffffffff", 16)
 
 initial_total_subranges = 100000
 address = "1BY8GQbnueYofwSuFAT3USAhGjPrkxDdW9"
-output_file = "FOUNDFOUNDFOUND.txt"
-log_file = "67-Aleatorio.tsv"
+output_file = "viva.txt"
+log_file = "saveit.tsv"
 
 # Conjunto para armazenar subranges já escaneados
 subranges_escaneados = set()

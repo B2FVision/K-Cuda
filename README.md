@@ -39,7 +39,6 @@ cd K-Cuda
 ````
 Instalação com placa de video
 ````
-cd KeyHuntCuda-vk
 make gpu=1 CCAP=89 all
 ````
 

@@ -39,13 +39,13 @@ def salvar_subrange(subrange_start, subrange_end):
 # Função para executar o KeyHunt
 def executar_keyhunt(subrange_start, subrange_end):
     comando = [
-        "./KeyHunt", "--gpu", "-m", "address", address,
+        "./KeyHunt", "--gpu", "--gpui", "0,1,2,3,4,5,6,7", "-m", "address", address,
         "--range", f"{subrange_start}:{subrange_end}",
         "--coin", "BTC", "-o", output_file,
     ]
     processo = subprocess.Popen(comando)
     return processo
-
+    
 # Função principal
 def gerenciar_busca():
     total_subranges = initial_total_subranges

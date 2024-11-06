@@ -32,12 +32,7 @@ sudo apt-get install python3.9
 ````
 Clonar o repositório
 ````
-git clone https://github.com/vkThiago/KeyHuntCuda-vk.git
-````
-Instalação sem placa de video
-````
-cd KeyHuntCuda-vk
-make all
+https://github.com/B2FVision/K-Cuda.git
 ````
 Instalação com placa de video
 ````

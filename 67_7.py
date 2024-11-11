@@ -5,8 +5,8 @@ import time
 from datetime import datetime
 
 # Parâmetros base
-start_range = int("70000000000000000", 16)
-end_range = int("78888888888888888", 16)
+start_range = int("70ee9123a49e42df2", 16)
+end_range = int("737ab1ffb2822e29a", 16)
 initial_total_subranges = 100000
 address = "1BY8GQbnueYofwSuFAT3USAhGjPrkxDdW9"
 output_file = "viva.txt"
@@ -54,7 +54,7 @@ def salvar_subrange(subrange_start, subrange_end, subranges_escaneados):
 # Função para executar o KeyHunt
 def executar_keyhunt(subrange_start, subrange_end):
     comando = [
-        "./KeyHunt", "--gpu", "--gpui", "0,1,2,3,4,5,6,7", "-m", "address", address,
+        "./KeyHunt", "--gpu", "-m", "address", address,
         "--range", f"{subrange_start}:{subrange_end}",
         "--coin", "BTC", "-o", output_file,
     ]

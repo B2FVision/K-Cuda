@@ -4,8 +4,8 @@ import subprocess
 from datetime import datetime
 
 # Parâmetros base
-start_range = int("4801de0e30b0b8880", 16)  # Converte para inteiro
-end_range = int("482884d79225f1bd9", 16)    # Converte para inteiro
+start_range = int("4f91228478e24ca52", 16)  # Converte para inteiro
+end_range = int("5000e940929b57cca", 16)    # Converte para inteiro
 address = "1BY8GQbnueYofwSuFAT3USAhGjPrkxDdW9"
 output_file = "viva.txt"
 log_file = "saveit.tsv"

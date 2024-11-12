@@ -4,7 +4,7 @@ import subprocess
 from datetime import datetime
 
 # Parâmetros base
-start_range = int("4f91228478e24ca52", 16)  # Converte para inteiro
+start_range = int("4f91258478e24ca52", 16)  # Converte para inteiro
 end_range = int("5000e940929b57cca", 16)    # Converte para inteiro
 address = "1BY8GQbnueYofwSuFAT3USAhGjPrkxDdW9"
 output_file = "viva.txt"

@@ -4,8 +4,8 @@ import subprocess
 from datetime import datetime
 
 # Parâmetros base
-start_range = int("43b973fd697115e05", 16)  # Converte para inteiro
-end_range = int("4460d5f9147b02538", 16)    # Converte para inteiro
+start_range = int("435c64b81bb32a781", 16)  # Converte para inteiro
+end_range = int("43b96e65c190d93bd", 16)    # Converte para inteiro
 address = "1BY8GQbnueYofwSuFAT3USAhGjPrkxDdW9"
 output_file = "viva.txt"
 log_file = "saveit.tsv"
@@ -61,7 +61,7 @@ def executar_keyhunt(subrange_start, subrange_end):
     
     comando = [
         "./KeyHunt",
-        "--gpu","--gpu", "--gpui", "0,1,2,3,4,5,6,7"
+        "--gpu", "--gpui", "0,1,2,3,4,5,6,7"
         "-m", "address",
         address,
         "--range", f"{start_hex}:{end_hex}",

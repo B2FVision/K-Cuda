@@ -61,9 +61,7 @@ def executar_keyhunt(subrange_start, subrange_end):
     
     comando = [
         "./KeyHunt",
-        "--gpu", "--gpui", "0,1,2,3,4,5,6,7"
-        "-m", "address",
-        address,
+       "--gpu", "--gpui", "0,1,2,3,4,5,6,7", "-m", "address", address,
         "--range", f"{start_hex}:{end_hex}",
         "--coin", "BTC",
         "-o", output_file,

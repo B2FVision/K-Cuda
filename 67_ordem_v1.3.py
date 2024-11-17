@@ -11,7 +11,7 @@ output_file = "viva.txt"
 log_file = "saveit.tsv"
 
 # Tamanho do subrange (44 bits)
-SUBRANGE_SIZE = 2**43
+SUBRANGE_SIZE = 2**44
 
 def carregar_ultimo_subrange():
     """Carrega o último subrange processado do arquivo de log"""

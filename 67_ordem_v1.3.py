@@ -78,6 +78,7 @@ def executar_keyhunt(subrange_start, subrange_end):
         "--range", f"{start_hex}:{end_hex}",
         "--coin", "BTC",
         "--gpui", ",".join(str(i) for i in range(num_gpus)),
+        "--gpux", ",".join(["1024,512"] * num_gpus),
         "-o", output_file,
     ]
     

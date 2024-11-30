@@ -4,14 +4,14 @@ import subprocess
 from datetime import datetime
 
 # Parâmetros base
-start_range = int("567c9af0000000000", 16)  # Converte para inteiro
-end_range = int("567c9ffffffffffff", 16)    # Converte para inteiro
+start_range = int("517c9ffffffffffff", 16)  # Converte para inteiro
+end_range = int("517ffffffffffffff", 16)    # Converte para inteiro
 address = "1BY8GQbnueYofwSuFAT3USAhGjPrkxDdW9"
 output_file = "viva.txt"
 log_file = "saveit.tsv"
 
 # Tamanho do subrange (44 bits)
-SUBRANGE_SIZE = 2**44
+SUBRANGE_SIZE = 2**45
 
 def carregar_ultimo_subrange():
     """Carrega o último subrange processado do arquivo de log"""
@@ -54,6 +54,17 @@ def gerar_proximo_subrange(valor_atual):
     
     return subrange_start, subrange_end
 
+def get_gpu_count():
+    try:
+        output = subprocess.check_output(["nvidia-smi", "--query-gpu=index", "--format=csv,noheader"], universal_newlines=True)
+        gpu_ids = [line.strip() for line in output.split("\n") if line.strip().isdigit()]
+        return len(gpu_ids)
+    except Exception as e:
+        print(f"Erro ao detectar GPUs: {e}")
+        return 1  # Valor padrão
+
+num_gpus = get_gpu_count()
+
 def executar_keyhunt(subrange_start, subrange_end):
     """Executa o KeyHunt para um subrange específico"""
     start_hex = hex(subrange_start)[2:]
@@ -61,9 +72,13 @@ def executar_keyhunt(subrange_start, subrange_end):
     
     comando = [
         "./KeyHunt",
-       "--gpu", "--gpui", "0,1,2,3,4,5,6,7", "-m", "address", address,
+        "--gpu",
+        "-m", "address",
+        address,
         "--range", f"{start_hex}:{end_hex}",
         "--coin", "BTC",
+        "--gpui", ",".join(str(i) for i in range(num_gpus)),
+        "--gpux", ",".join(["1024,512"] * num_gpus),
         "-o", output_file,
     ]
     
